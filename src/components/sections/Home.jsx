@@ -6,22 +6,23 @@ export const Home = () => {
         <section 
         
         id="home"
-        className="pt-12 min-h-screen flex items-center justify-center relative">
+        className="pt-12 min-h-screen flex items-center justify-center relative bg-gradient-to-r from-blue-100 to-green-50">
             <RevealOnScroll>
                 <picture>
                     <source srcSet={`${import.meta.env.BASE_URL}/Transpromptify.png`} type="image/png"/>
                     <img
                         src={`${import.meta.env.BASE_URL}/Transpromptify.png`}
                         alt="Promptify Logo"
+                        loading="lazy"
                         onClick='#home'
                         className=" sm:w-56 sm:h-56 md:w-64 md:h-64 object-cover mx-auto -m-12"
                     />  
                 </picture>
             <div className="text-center z-10 px-4">
                 {/*Main */}
-                <h1 className="text-6xl sm:text-5xl md:text-7xl font-bold mb-6 
+                <h1 className="text-6xl sm:text-5xl md:text-7xl font-bold mb-5
                     bg-gradient-to-r from-blue-500 to-green-300 bg-clip-text text-transparent 
-                    leading-tight break-words text-center w-full px-2">
+                    leading-tight break-words text-center w-full px-2 leading-normal pb-2">
                     Welcome to Promptify
                 </h1>
 

@@ -4,11 +4,11 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center bg-white text-gray-800 px-6 py-20 -mt-40"
+      className="min-h-screen flex items-center justify-center bg-white text-gray-800 px-6 py-20 -mt-20 bg-gradient-to-r from-blue-100 to-green-50"
     >
         <div className="max-w-4xl mx-auto text-center">
             <RevealOnScroll>
-          <h2 className="text-4xl sm:text-6xl font-extrabold mb-6 bg-gradient-to-r from-blue-500 to-green-300 bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-6xl font-extrabold mb-4 bg-gradient-to-r from-blue-500 to-green-300 bg-clip-text text-transparent leading-normal pb-2">
             About Promptify!
           </h2>
 

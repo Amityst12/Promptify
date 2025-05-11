@@ -6,7 +6,7 @@ export const Navbar= ({menuOpen, setMenuOpen}) =>{
         document.body.style.overflow = menuOpen ? "hidden" : ""
     }, [menuOpen]); //If state of menu changes
 
-    return <nav className="fixed top-0 w-full z-40 bg-sky-500 backdrop-blur-lg border-b border-white/10 shadow-lg">
+    return <nav className="fixed top-0 w-full z-40 bg-gradient-to-r from-sky-600 to-green-500 backdrop-blur-lg border-b border-white/10 shadow-lg">
   <div className="max-w-6xl mx-auto px-4">
     <div className="flex justify-between items-center h-16">
 
@@ -21,7 +21,8 @@ export const Navbar= ({menuOpen, setMenuOpen}) =>{
           <img
             src={`${import.meta.env.BASE_URL}/Transpromptify.png`}
             alt="Promptify Logo"
-            className="w-25 h-25 sm:w-25 sm:h-25 cursor-pointer hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+            className="w-12 h-12 sm:w-10 sm:h-10 cursor-pointer hover:scale-105 transition-transform duration-300"
           />
           </a>
         </picture>
