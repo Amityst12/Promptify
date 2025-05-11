@@ -7,6 +7,7 @@ import { Navbar } from './components/Navbar.jsx';
 import { LoadingScreen}  from "./components/LoadingScreen.jsx";
 import { Home } from './components/sections/Home.jsx';
 import { BetterPrompt } from './components/sections/BetterPrompt.jsx'
+import { About } from './components/sections/About.jsx';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <MobileMenu menuOpen ={menuOpen} setMenuOpen ={setMenuOpen}/>
             <Home/>
             <BetterPrompt/>
+            <About/>
         </div>
     </>
     );

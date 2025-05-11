@@ -17,11 +17,13 @@ export const Navbar= ({menuOpen, setMenuOpen}) =>{
             srcSet={`${import.meta.env.BASE_URL}/Transpromptify.png`}
             type="image/png"
           />
+          <a href="#home">
           <img
             src={`${import.meta.env.BASE_URL}/Transpromptify.png`}
             alt="Promptify Logo"
-            className="w-25 h-25 sm:w-25 sm:h-25"
+            className="w-25 h-25 sm:w-25 sm:h-25 cursor-pointer hover:scale-105 transition-transform duration-300"
           />
+          </a>
         </picture>
 
         <a

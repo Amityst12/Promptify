@@ -13,6 +13,7 @@ export const Home = () => {
                     <img
                         src={`${import.meta.env.BASE_URL}/Transpromptify.png`}
                         alt="Promptify Logo"
+                        onClick='#home'
                         className=" sm:w-56 sm:h-56 md:w-64 md:h-64 object-cover mx-auto -m-12"
                     />  
                 </picture>
