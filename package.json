@@ -1,6 +1,6 @@
 {
   "name": "promptify",
-  "homepage" : "https://amityst12.github.io/promptify",
+  "homepage": "https://amityst12.github.io/Promptify",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npx gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.16",
