@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import './App.css'
-import "./index.css"
+import { useState, useEffect } from 'react';
+import './App.css';
+import "./index.css";
 
 import { MobileMenu } from './components/MobileMenu.jsx';
 import { Navbar } from './components/Navbar.jsx';
@@ -11,6 +11,7 @@ import { About } from './components/sections/About.jsx';
 
 
 function App() {
+
   const [isLoaded, setIsLoaded] = useState(false); 
   const [menuOpen, setMenuOpen] = useState(false);
 

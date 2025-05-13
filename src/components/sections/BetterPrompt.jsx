@@ -2,10 +2,16 @@ import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { improvePrompt } from "../../utils/openai";
 import { fallbackCopy } from "../../utils/fallbackCopy";
+import { PromptHistory } from "./PromptHistory";
+
 
 export const BetterPrompt = () => {
   const [input, setInput] = useState("");
   const [improvedPrompt, setImprovedPrompt] = useState("");
+  const [history, setHistory] = useState(() => {
+  return JSON.parse(localStorage.getItem("promptHistory")) || [];
+  });
+
 
   const handleImprove = async () => {
   if (!input.trim()) {
@@ -18,11 +24,21 @@ export const BetterPrompt = () => {
   try{
     const result = await improvePrompt(input);
     setImprovedPrompt(result);
+
+    //Save to local storage
+    const history = JSON.parse(localStorage.getItem("promptHistory")) || [];
+    const newEntry = {input, improved: result, timestamp: Date.now()};
+    const updatedHistory = [newEntry, ...history].slice(0,10); //Save last 10 only
+    setHistory(updatedHistory);
+    localStorage.setItem("promptHistory", JSON.stringify(updatedHistory));
+
   } catch (error){
     console.error("OpenAI API error", error);
     setImprovedPrompt("Failed to improve the prompt. Please try again later.");
   }
     };
+
+
 
   return (
     <section
@@ -39,13 +55,21 @@ export const BetterPrompt = () => {
             Enter a basic question or instruction, and let <span className="text-blue-400 font-semibold">Promptify</span> refine it for better AI results.
           </p>
 
-          <input
-            type="text"
-            className="w-full p-3 rounded bg-blue-600 border border-gray-500 mb-4"
+          <textarea
+            className="w-full p-3 rounded bg-blue-600 border border-gray-500 mb-4 text-white resize-none overflow-hidden"
             placeholder="Type your prompt..."
+            rows={1}
             value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
+            onChange={(e) => {
+              setInput(e.target.value);
+
+              // Auto resize
+              const el = e.target;
+              el.style.height = "auto"; // Reset
+              el.style.height = el.scrollHeight + "px"; // Set to scroll height
+            }}
+            />
+
           <button 
             onClick={handleImprove}
             className="bg-blue-600 border border-gray-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden 
@@ -74,12 +98,17 @@ export const BetterPrompt = () => {
                     fallbackCopy(improvedPrompt);
                   }
                 }}
-                className="cursor-pointer mt-2 text-sm bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition"
+                className="cursor-pointer mt-2 text-sm bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-400 transition hover:bg-opacity-90 bg-white/20 backdrop-blur-md" 
               >
                 Copy to clipboard
               </button>
             </div>
           )}
+          <PromptHistory 
+            onReuse={(reusedInput) => setInput(reusedInput)}
+            history={history}
+            setHistory={setHistory}
+          />
         </div>
       </RevealOnScroll>
     </section>
