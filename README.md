@@ -1,43 +1,44 @@
-# 🧠 Promptify – Ask Better.
+# 🚀 Promptify — Ask Better.
 
-Promptify helps you craft better prompts for AI.
+**Promptify** helps you turn vague or simple prompts into detailed, effective instructions ready for AI.
 
-Whether you're a student, developer, writer, or just curious — Promptify takes simple questions and turns them into effective, structured prompts ready for AI models like ChatGPT.
+Tired of typing unclear instructions into ChatGPT and getting underwhelming responses?  
+Promptify bridges that gap — with smart prompt enhancement that speaks AI fluently.
 
 ---
 
 ## ✨ Features
 
-- 📝 **Prompt Enhancer** – Write a simple sentence and get a detailed, AI-ready prompt in return.
-- 🗃️ **Prompt History** – View and reuse your 10 most recent prompts.
-- 📋 **Copy to Clipboard** – One-click copy of the improved prompt.
-- 🌈 **Responsive UI** – Clean, modern design with smooth animations.
-- 🌐 **Supports All Languages** – Input and output are preserved in the same language.
-- 📱 **Mobile Friendly** – Optimized for phones, tablets, and desktop.
+- 🧠 **AI-Powered Prompt Improvement**  
+  Enter a basic idea. Promptify rewrites it into a structured, detailed prompt tailored for AI models.
+
+- 📋 **Copy to Clipboard**  
+  One-click copying of your improved prompt for fast use in other platforms.
+
+- 📜 **Prompt History (Last 10)**  
+  Keeps your recent prompts for reuse or inspiration. Stored locally, no account needed.
+
+- 🌍 **Language Aware**  
+  Input in Hebrew, English, or any other language? Promptify maintains the same language in the output.
+
+- 📱 **Mobile-Responsive UI**  
+  Clean, modern design optimized for both desktop and mobile.
 
 ---
 
-## 🔧 Tech Stack
+## 🛠️ Tech Stack
 
-- **Frontend**: React (Vite)
-- **Styling**: Tailwind CSS
+- **Framework**: React + Vite  
+- **Styling**: Tailwind CSS  
+- **State & Storage**: React Hooks + `localStorage`  
+- **AI API**: OpenAI (GPT-3.5 / GPT-4)  
 - **Deployment**: GitHub Pages
-- **AI API**: OpenAI GPT-3.5 or GPT-4 (via `fetch`)
-- **State Management**: `useState`, `useEffect`
 
 ---
 
-## 🖥️ Screenshots
+## 🚧 Getting Started
 
-| Home | Prompt Input | Result + History |
-|------|--------------|------------------|
-| ![](./screenshots/home.png) | ![](./screenshots/input.png) | ![](./screenshots/history.png) |
-
----
-
-## 🚀 Getting Started
-
-### 1. Clone the Repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/Amityst12/Promptify.git
