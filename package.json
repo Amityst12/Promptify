@@ -12,10 +12,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist -r https://github.com/Amityst12/Promptify.git"
   },
-  "netlify": {
-    "functions": "netlify/functions",
-    "publish": "dist"
-  },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.6",
